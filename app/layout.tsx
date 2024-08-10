@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react";
-
+import "./globals.css";
+import Script from "next/script";
 type Props = {
   children: ReactNode;
   params: {
@@ -13,10 +14,13 @@ const RootLayout: FC<Props> = async ({
 }) => {
   return (
     <html lang={'en'}>
-      <body className={`font-regular bg-dark`}>
+      <body className={``}>
         <div className="min-h-screen wrapper laptop:pb-0 w-full">
           {children}
         </div>
+        <Script
+          src='https://assets.mamopay.com/public/checkout-inline.min.js'
+        />
       </body>
     </html>
   );
